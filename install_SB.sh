@@ -65,7 +65,6 @@ echo "
 Adicionando fontes para o Zsh"
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P ~/.local/share/fonts/
 
-
 echo "
 Sobrepondo environment Qt do Telegram para executar por xcb" 
 sudo flatpak override --env=QT_QPA_PLATFORM=xcb org.telegram.desktop
