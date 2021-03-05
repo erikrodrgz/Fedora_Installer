@@ -21,7 +21,7 @@ echo "alias tbxrun='toolbox run -c tbx'" >> ~/.bashrc
 echo "
 Criando pergunta do bash"
 
-echo "read -p 'Do you wish to open ZSH?' yn
+echo "read -p 'Do you wish to open ZSH [y/n]: ' yn
 case \$yn in
    [Yy]* ) exec zsh;;
    [Nn]* ) ;;
