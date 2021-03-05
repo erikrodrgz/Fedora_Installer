@@ -1,15 +1,21 @@
 #!/bin/bash
 
+echo "rpm-ostree upgrade"
 rpm-ostree upgrade
 
+echo "rpm-ostree override remove firefox"
 rpm-ostree override remove firefox
 
+echo "rpm-ostree install power-profiles-daemon zsh"
 rpm-ostree install power-profiles-daemon zsh
 
+echo "sudo rm /etc/xdg/autostart/gnome-software-service.desktop"
 sudo rm /etc/xdg/autostart/gnome-software-service.desktop
 
+echo "sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+echo "flatpak install flathub..." 
 flatpak install flathub \
       ca.desrt.dconf-editor  \
       com.github.gi_lom.dialect  \
@@ -44,6 +50,7 @@ flatpak install flathub \
       org.zotero.Zotero                        \
       us.zoom.Zoom
 
+echo "Zsh..." 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -51,9 +58,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 mkdir ~/.local/share/fonts && cd ~/.local/share/fonts && wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf && cd
 source ./.zshrc
 
+echo "flatpak override --env=QT_QPA_PLATFORM=xcb org.telegram.desktop" 
 sudo flatpak override --env=QT_QPA_PLATFORM=xcb org.telegram.desktop
 
+echo "toolbox create -c tbx" 
 toolbox create -c tbx
+
+echo "toolbox run -c tbx sh ./install_toolbox.sh"
 toolbox run -c tbx sh ./install_toolbox.sh 
 
 echo 'alias tbx="toolbox enter -c tbx' >> ~/.zshrc
@@ -70,8 +81,10 @@ case $yn in
    * ) echo "Please answer yes or no.";;
 esac' >> ~/.bashrc
 
+echo "sudo echo 'options iwlwifi bt_coex_active=0' >> /etc/modprobe.d/iwlwifi.conf"
 sudo echo 'options iwlwifi bt_coex_active=0' >> /etc/modprobe.d/iwlwifi.conf
 
+echo "gsettings..."
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.shell disable-user-extensions true
 gsettings set org.gnome.desktop.interface font-hinting 'full' 
