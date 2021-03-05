@@ -62,8 +62,8 @@ flatpak install flathub \
       us.zoom.Zoom
 
 echo "
-Adicionando fontes"
-mkdir ~/.local/share/fonts && cd ~/.local/share/fonts && wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf && cd
+Adicionando fontes para o Zsh"
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P ~/.local/share/fonts/
 
 
 echo "

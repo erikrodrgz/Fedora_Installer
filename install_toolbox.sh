@@ -72,23 +72,19 @@ meson
    
 sudo dnf groupinstall -y 'C Development Tools and Libraries'
 
-mkdir BUILD && cd BUILD
-git clone https://github.com/sourceryinstitute/OpenCoarrays
-cd ./OpenCoarrays
-sudo ./install.sh -c gcc -C g++ -f gfortran -m cmake  -j 2  --prefix-root /opt -y
-cd .. 
-
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/ptBR-2013-10-30AOC-2.zip
 unzip ptBR-2013-10-30AOC-2.zip
 sudo mv pt_BR.aff  /usr/share/myspell
 sudo mv pt_BR.dic  /usr/share/myspell
 cd ..
 
-conda create --name PythonEnv
+conda create -n PythonEnv -c conda-forge notebook numpy pandas
 
-conda activate PythonEnv
-
-conda install -c conda-forge notebook -y
+mkdir BUILD && cd BUILD
+git clone https://github.com/sourceryinstitute/OpenCoarrays
+cd ./OpenCoarrays
+sudo ./install.sh -c gcc -C g++ -f gfortran -m cmake  -j 2  --prefix-root /opt -y
+cd .. 
 
 #The user needs to reboot to apply all changes.
 echo "Please Reboot" && exit 0
