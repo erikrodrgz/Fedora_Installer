@@ -7,6 +7,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sed -i 's/ZSH_THEME=.*/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/g' ~/.zshrc
+sed -i 's/plugins=.*/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g' ~/.zshrc
 
 echo "
 Criando alias tbx e tbxrun"
@@ -27,12 +29,9 @@ case \$yn in
    * ) echo 'Please answer yes or no.';;
 esac" >> ~/.bashrc      
 
-sed -i 's/ZSH_THEME=.*/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/g' ~/.zshrc
-sed -i 's/plugins=.*/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g' ~/.zshrc
-
 zsh 
 
-echo "Please Reboot" && exit 0
+exit 0
 
 
 
