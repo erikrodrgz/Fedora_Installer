@@ -27,9 +27,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 echo "
 Instalando programas Flatpak"
 
-flatpak install flathub \
-      ca.desrt.dconf-editor  \
-      com.github.gi_lom.dialect  \
+flatpak install flathub                        \
+      ca.desrt.dconf-editor                    \
+      com.github.gi_lom.dialect                \
       com.github.johnfactotum.Foliate          \
       com.github.maoschanz.drawing             \
       com.github.tchx84.Flatseal               \
@@ -87,10 +87,14 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.shell disable-user-extensions true
 gsettings set org.gnome.desktop.interface font-hinting 'full' 
 gsettings set org.gnome.desktop.interface font-antialiasing 'rgba' 
+gsettings set org.gnome.software download-updates false
+gsettings set org.gnome.software download-updates-notify false
 
+echo "
+Please Reboot"
 systemctl reboot
 
-echo "Please Reboot" && exit 0
+exit 0
 
 
 

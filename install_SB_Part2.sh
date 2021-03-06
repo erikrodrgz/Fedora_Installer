@@ -28,8 +28,10 @@ case \$yn in
    * ) echo 'Please answer yes or no.';;
 esac" >> ~/.bashrc
 
+
+sed 's/^ZSH_THEME =.*/ZSH_THEME = powerlevel10k/powerlevel10k/g'
+
 echo "MODIFICAR: 
-ZSH_THEME=powerlevel10k/powerlevel10k
 plugins=(firewalld git zsh-syntax-highlighting zsh-autosuggestions)"
 
 echo "Please Reboot" && exit 0
