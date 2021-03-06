@@ -25,10 +25,10 @@ case \$yn in
    [Yy]* ) exec zsh;;
    [Nn]* ) ;;
    * ) echo 'Please answer yes or no.';;
-esac" >> ~/.bashrc
+esac" >> ~/.bashrc      
 
 sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k/powerlevel10k\"/g' ~/.zshrc
-sed -i 's/plugins=(git)/plugin=(\n\tgit\n\tzsh-syntax-highlighting\n\tzsh-autosuggestions\n)/g' ~/.zshrc
+sed -i 's/plugins=.*/plugins="(git zsh-syntax-highlighting zsh-autosuggestions)"/g' ~/.zshrc
 
 
 echo "Please Reboot" && exit 0
