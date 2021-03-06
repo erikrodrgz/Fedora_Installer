@@ -27,9 +27,10 @@ case \$yn in
    * ) echo 'Please answer yes or no.';;
 esac" >> ~/.bashrc      
 
-sed -i 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k/powerlevel10k\"/g' ~/.zshrc
-sed -i 's/plugins=.*/plugins="(git zsh-syntax-highlighting zsh-autosuggestions)"/g' ~/.zshrc
+sed -i 's/ZSH_THEME=.*/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/g' ~/.zshrc
+sed -i 's/plugins=.*/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g' ~/.zshrc
 
+zsh 
 
 echo "Please Reboot" && exit 0
 
