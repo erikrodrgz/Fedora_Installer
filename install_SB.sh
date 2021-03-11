@@ -31,7 +31,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 echo "
 Instalando programas Flatpak"
 
-flatpak install flathub                        \
+flatpak install flathub -y                     \
       ca.desrt.dconf-editor                    \
       com.github.gi_lom.dialect                \
       com.github.johnfactotum.Foliate          \
@@ -67,6 +67,7 @@ flatpak install flathub                        \
 
 echo "
 Adicionando fontes para o Zsh"
+mkdir -p ~/.local/share/fonts 
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P ~/.local/share/fonts/
 
 echo "

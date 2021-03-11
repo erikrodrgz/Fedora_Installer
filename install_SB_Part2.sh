@@ -15,7 +15,7 @@ Criando alias tbx e tbxrun"
 
 echo "alias tbx='toolbox enter -c tbx'" >> ~/.zshrc
 echo "alias tbxrun='toolbox run -c tbx'" >> ~/.zshrc
- echo "alias adwaita-dark='gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark''" >> ~/.zshrc
+echo "alias adwaita-dark='gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark''" >> ~/.zshrc
 echo "alias adwaita='gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita''" >> ~/.zshrc
 
 echo "alias tbx='toolbox enter -c tbx'" >> ~/.bashrc
