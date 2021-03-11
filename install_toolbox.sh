@@ -37,7 +37,7 @@ codeblocks \
 codeblocks-contrib \
 openmpi \
 openmpi-devel \
-texlive-scheme-small \
+texlive-scheme-full \
 texlive-pgfplots \
 texlive-luacode \
 jetbrains-mono-fonts-all \

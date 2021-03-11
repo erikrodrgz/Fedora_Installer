@@ -1,6 +1,10 @@
 #!/bin/bash
 
 echo "
+Trocando o nome do computadora para rodrgz"
+hostnamectl set-hostname rodrgz
+
+echo "
 Cancelando operações rpm-ostree em execução"
 rpm-ostree cancel
 
