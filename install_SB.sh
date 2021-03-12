@@ -80,7 +80,7 @@ toolbox create -c tbx -y
 
 echo "
 Executando Script de instalação dos programas da Toolbox"
-toolbox run -c tbx sh ./install_toolbox.sh 
+toolbox run -c tbx sudo sh ./install_toolbox.sh 
 
 echo "
 Configurando co-existência entre WiFi e Bluetooth"

@@ -37,7 +37,7 @@ codeblocks \
 codeblocks-contrib \
 openmpi \
 openmpi-devel \
-texlive-scheme-full \
+texlive-scheme-small \
 texlive-pgfplots \
 texlive-luacode \
 jetbrains-mono-fonts-all \
@@ -59,7 +59,6 @@ libpng12 \
 util-linux-user \
 lsb \
 evince \
-a2x \
 asciidoc \
 sassc \
 mutter \
@@ -68,17 +67,18 @@ dbus-daemon \
 mesa-dri-drivers \
 gettext-devel \
 yelp-tools \
-meson
+meson \
+hunspell-br
    
 sudo dnf groupinstall -y 'C Development Tools and Libraries'
 
 wget https://pt-br.libreoffice.org/assets/Uploads/PT-BR-Documents/VERO/ptBR-2013-10-30AOC-2.zip
-unzip ptBR-2013-10-30AOC-2.zip
+unzip ptBR-2013-10-30AOC-2.zip && rm ptBR-2013-10-30AOC-2.zip
 sudo mv pt_BR.aff  /usr/share/myspell
 sudo mv pt_BR.dic  /usr/share/myspell
 cd ..
 
-conda create -n PythonEnv -c conda-forge notebook numpy pandas
+conda create -y -n PythonEnv -c conda-forge notebook numpy pandas 
 
 mkdir BUILD && cd BUILD
 git clone https://github.com/sourceryinstitute/OpenCoarrays
